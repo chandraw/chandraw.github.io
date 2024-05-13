@@ -1,0 +1,252 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:PMingLiU;
+	panose-1:2 1 6 1 0 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 1 6 1 0 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.0pt 842.0pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-ID style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:16.0pt;line-height:115%;font-family:"Times New Roman",serif'>Exploring
+Titanic Dataset with Pandas</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>1.
+Introduction</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>In
+this lab we tried to explore the titanic dataset. Firstly, we have to import
+the pandas as we will put the data into the dataframe and processes later with
+the help of pandas library.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>2.
+Load the Dataset</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>Then
+we have to load the dataset using read_csv function from pandas library.</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>df = pd.read_csv(“titanic.csv”)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>3.
+Data Exploration</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>To
+explore the dataset, we then try to print first 10 data. The result can be shown
+in figure 1 below.</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>print(df.head(10))</span></p>
+
+<p class=MsoNormal><span style='position:relative;z-index:251659264;left:-60px;
+top:135px;width:883px;height:300px'><img width=706 height=132
+src="index_files/image001.png"
+alt="A black screen with white text&#10;&#10;Description automatically generated"></span><span
+lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>Figure 1. The result for displaying
+first 10 data</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>Since
+we doesn’t know the data type from each column, try to use dtype function to
+show the datatypes of each column. </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>            </span><span
+lang=EN-US style='font-family:"Courier New"'>print(df.dtypes)</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>The
+result can be shown in figure 2 below. From the figure we can see some of the
+column datatype is integer, such as passengerId survived, pclass, SibSp, Parch,
+etc. The other datatype is object, such as Name, Sex, Ticket, etc.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'><img width=156 height=211
+src="index_files/image002.png"
+alt="A screen shot of a computer&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>Figure 2. The datatypes for each
+column</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>The
+next thing we use another function called describe to descsribe the statistic
+of the dataset. </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>print(df.describe())</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>The
+result from above command is shown in figure 3 below. From the result, show
+that the column PassengerId datacount is 891, the mean is 446, the standard
+deviation is 257.353842, minimum value is 1, and max is 891. The other column also
+explored with the same parameters (count, mean, std, min, max). </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'><img width=601 height=140
+src="index_files/image003.png"
+alt="A screen shot of a computer screen&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>Figure 3. The dataframe statistic
+function</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>4.
+Data Cleaning </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>Using
+data cleaning function such is isnull, dropna, etc, we can do data cleaning process
+to the dataset. Figure 4 show the result of isnull function, to show how many
+null data is on the dataset.</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>print(df.isnull().sum())</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'><img width=108 height=168
+src="index_files/image004.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>Figure 4. The number of Null data
+in the dataset</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>From
+figure 4, we can see that there are 177 null data in Age column, 687 null data
+in Cabin column, and 2 null data in embark column. We have to clean those null
+data. We use this function to process the data cleaning.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>df[&quot;Age&quot;] = df[&quot;Age&quot;].mean()</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span lang=EN-US style='font-family:
+"Courier New"'>df = df.dropna()</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>Then
+after running that command, the result of isnull command summary is shown in figure
+5 below.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'><img width=102 height=185
+src="index_files/image005.png"
+alt="A black screen with white text&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Times New Roman",serif'>Figure 5. The number of Null data
+in the dataset after data cleaning process</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>5.
+Data Analysis</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>To
+count the passengers by gender, we use this statement:</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-family:"Courier New"'>print(df[&quot;Sex&quot;].value_counts())</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>And the
+result is below </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Times New Roman",serif'><img width=134 height=42
+src="index_files/image006.png"
+alt="A black background with white text&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Using the
+average function of dataframe, we have the following result </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Courier New"'><img width=162 height=22 id="Picture 1"
+src="index_files/image007.png"></span></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>6. Data
+Visualization</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>7.
+Conclusion</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>The
+titanic dataset shows how we know some function of python pandas library to be
+used for Exploratory Data Analysis.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>The
+importance of data cleaning is very important since the data may have many
+noise, that can make the statistic data is not correct. </span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
